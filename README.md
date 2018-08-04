@@ -1,14 +1,14 @@
 # GetVeg
 The number one source for all of your vegetables.  Except for tomato, we don't talk about tomato!
 
-###Requirements
+### Requirements
 
 * PHP 7.2
 * Composer
 * PostgreSQL 10.2
 * A web server configured to rewrite all requests to /src/index.php
 
-##Installation
+## Installation
 
 Clone this repository to the root of your webserver  
 Install dependencies via composer
