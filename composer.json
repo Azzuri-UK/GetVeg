@@ -1,0 +1,17 @@
+{
+  "require": {
+    "phroute/phroute": "^2.1",
+    "league/container": "^3.0",
+    "sabre/http": "~4.2",
+    "orno/di": "^2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "GetVeg\\": "src",
+      "GetVeg\\Routes\\": "src/routes/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7"
+  }
+}

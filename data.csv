@@ -1,0 +1,20 @@
+name,classification,description,edible
+fenel,bulbs,"Fennel is a flowering plant species in the carrot family. It is a hardy, perennial herb with yellow flowers and feathery leaves",1
+garlic,bulbs,"Garlic is a species in the onion genus, Allium. Its close relatives include the onion, shallot, leek, chive, and Chinese onion",1
+leek,bulbs,"The leek is a vegetable, a cultivar of Allium ampeloprasum, the broadleaf wild leek. The edible part of the plant is a bundle of leaf sheaths that is sometimes erroneously called a stem or stalk.",1
+cauliflower,flowers,"Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which is in the family Brassicaceae. It is an annual plant that reproduces by seed",1
+broccoli,flowers,Broccoli is an edible green plant in the cabbage family whose large flowering head is eaten as a vegetable,1
+courgette,flowers,"The zucchini or courgette is a summer squash which can reach nearly 1 metre in length, but is usually harvested when still immature at about 15 to 25 cm",1
+tomato,fruits,Yucky McYuckface,0
+beetroot,roots,"The beetroot is the taproot portion of the beet plant, usually known in North America as the beet, also table beet, garden beet, red beet, or golden beet",1
+carrot,roots,"The carrot is a root vegetable, usually orange in colour, though purple, black, red, white, and yellow cultivars exist. Carrots are a domesticated form of the wild carrot, Daucus carota, native to Europe and southwestern Asi",1
+parsnip,roots,The parsnip is a root vegetable closely related to the carrot and parsley. It is a biennial plant usually grown as an annual.,1
+green bean,seeds,"Green beans are the unripe, young fruit and protective pods of various cultivars of the common bean. Immature or young pods of the runner bean, yardlong bean, and hyacinth bean are used in a similar way.",1
+pea,seeds,"The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow",1
+sweetcorn,seeds,Sweet corn is a cereal with a high sugar content. Sweet corn is the result of a naturally occurring recessive mutation in the genes which control conversion of sugar to starch inside the ENO of the corn kernel.,1
+asparagus,stems,"Asparagus, or garden asparagus, folk name sparrow grass, scientific name Asparagus officinalis, is a spring vegetable, a flowering perennial plant species in the genus Asparagus.",1
+celery,stems,Celery is a marshland plant in the family Apiaceae that has been cultivated as a vegetable since antiquity. Celery has a long fibrous stalk tapering into leaves,1
+kohlrabi,stems,"Kohlrabi is a biennial vegetable, a low, stout cultivar of wild cabbage. It is the same species as cabbage, broccoli, cauliflower, kale, Brussels sprouts, collard greens, savoy, and gai lan. It can be eaten raw or cooked",1
+artichoke,tubers,The globe artichoke is a variety of a species of thistle cultivated as a food. The edible portion of the plant consists of the flower buds before the flowers come into bloom.,1
+potato,tubers,"The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. Potato may be applied to both the plant and the edible tuber. Common or slang terms for the potato include tater, spud, and toober.",1
+yam,tubers,Yam is the common name for some plant species in the genus Dioscorea that form edible tubers. Yams are perennial herbaceous vines cultivated for the consumption of their starchy tubers in many temperate and tropical world regions,1
