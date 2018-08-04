@@ -54,28 +54,28 @@ Import data.csv into your newly created database table, or populate it with your
 ## Usage
 #### HTTP
 
-#####GET /endpoints  
+###### GET /endpoints  
 Returns a list of available endpoints
 
-#####GET /vegetables
+###### GET /vegetables
 Returns a list of all vegetables in the database
   
-#####GET /vegetables/edible
+###### GET /vegetables/edible
 Returns a list of all edible vegetables in the database
 
-#####GET /vegetables/inedible
+###### GET /vegetables/inedible
 Returns a list of all inedible vegetables in the database (TOMATO!)
 
-#####GET /vegetables/vegetable/{vegetableName}
+###### GET /vegetables/vegetable/{vegetableName}
 Returns details of a specific vegetable
 
 #### CLI
 
 ```console
- index.php --{REQUEST_TYPE}-{ROUTE}
+ php index.php --{REQUEST_TYPE}-{ROUTE}
 ```
 
 Examples
 
-#####index.php --get-vegetables
-#####index.php --get-vegetables/inedible
+###### index.php --get-vegetables
+###### index.php --get-vegetables/inedible
