@@ -3,7 +3,8 @@
     "phroute/phroute": "^2.1",
     "league/container": "^3.0",
     "sabre/http": "~4.2",
-    "orno/di": "^2.3"
+    "orno/di": "^2.3",
+    "jimbojsb/pseudo": "^0.3.1"
   },
   "autoload": {
     "psr-4": {

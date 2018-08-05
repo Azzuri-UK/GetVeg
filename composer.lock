@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28fc6cc0cf12dadff6a6ae346ab641ac",
+    "content-hash": "cc418c47e636caea06d3b4e95f01b9b4",
     "packages": [
+        {
+            "name": "jimbojsb/pseudo",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jimbojsb/pseudo.git",
+                "reference": "f6de3bdecc372b137715b3cfa8268d89ffbad747"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jimbojsb/pseudo/zipball/f6de3bdecc372b137715b3cfa8268d89ffbad747",
+                "reference": "f6de3bdecc372b137715b3cfa8268d89ffbad747",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pseudo": "src/"
+                },
+                "files": [
+                    "src/php-sql-parser.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Butts",
+                    "email": "josh@joshbutts.com"
+                }
+            ],
+            "description": "PDO/MySQL Connection Mocking",
+            "time": "2018-07-13T13:55:10+00:00"
+        },
         {
             "name": "league/container",
             "version": "3.0.1",

@@ -8,7 +8,7 @@
 
 namespace GetVeg\Routes;
 
-class Home
+class IndexRouter
 {
     public function getIndex()
     {

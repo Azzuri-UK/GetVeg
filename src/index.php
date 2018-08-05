@@ -7,22 +7,25 @@ ini_set("display_errors", 1);
  * Time: 22:53
  */
 
+
+/** In hindsight this probably should have been a class to make this testable  */
+
 require __DIR__ . '/../vendor/autoload.php';
 
 // Parse the db config data from an ini file to keep it out of code
-$db = parse_ini_file("./config/db.ini");
+$db = parse_ini_file(__DIR__ . "./config/db.ini");
 
 $container = new League\Container\Container;
 
 // Add our route controllers to the container
-$container->add(GetVeg\Routes\Home::class);
+$container->add(GetVeg\Routes\IndexRouter::class);
 $container
-    ->add(GetVeg\Routes\Vegetables::class)
-    ->addMethodCall('setModel', [\GetVeg\Models\Vegetables::class]);
+    ->add(GetVeg\Routes\VegetableRouter::class)
+    ->addMethodCall('setModel', [\GetVeg\Models\VegetableModel::class]);
 
 // Add the model and call the setter for the database connection
 $container
-    ->add(GetVeg\Models\Vegetables::class)
+    ->add(GetVeg\Models\VegetableModel::class)
     ->addMethodCall('setPdo', [PDO::class]);
 
 // Add PDO to the container for DB access using the values from the ini file.
@@ -35,8 +38,8 @@ $container
 $router = new Phroute\Phroute\RouteCollector();
 
 // Define our routes and controllers
-$router->controller('/', $container->get(\GetVeg\Routes\Home::class));
-$router->controller('/vegetables', $container->get(\GetVeg\Routes\Vegetables::class));
+$router->controller('/', $container->get(\GetVeg\Routes\IndexRouter::class));
+$router->controller('/vegetables', $container->get(\GetVeg\Routes\VegetableRouter::class));
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
@@ -69,7 +72,6 @@ try {
     ];
 }
 
-// Adjust the output depending on if its being called from CLI or a browser
 if (PHP_SAPI == "cli") {
     // Check if there is an error and show it if there is
     if (array_key_exists("error", $response)) {
@@ -78,7 +80,8 @@ if (PHP_SAPI == "cli") {
         // Format the output into a table
         $mask = "|%3.3s |%-15.15s |%-15.15s |%-30.30s | %-6.6s  |\n";
         printf($mask, 'Id', 'Name', 'Classification', 'Description', 'Edible');
-        printf($mask, '-----', '-------------------', '---------------', '------------------------------', '----------');
+        printf($mask, '-----', '-------------------', '---------------', '------------------------------',
+            '----------');
         foreach ($response['data'] as $key => $value) {
             printf($mask, $value['id'], $value['name'], $value['classification'], $value['description'],
                 $value['edible'] ? "true" : "false");
@@ -88,4 +91,5 @@ if (PHP_SAPI == "cli") {
     // If its a browser return json data
     echo json_encode($response);
 }
+
 ?>

@@ -8,7 +8,8 @@
 
 namespace GetVeg\Models;
 
-class Vegetables
+use PDO;
+class VegetableModel
 {
     /**
      * @var \PDO
@@ -20,9 +21,10 @@ class Vegetables
      *
      * @param \PDO $pdo
      */
-    public function setPdo(\PDO $pdo)
+    public function setPdo(PDO $pdo)
     {
         $this->pdo = $pdo;
+        return true;
     }
 
     /**
@@ -57,8 +59,8 @@ class Vegetables
     public function getEdibleVegetableList()
     {
         try {
-            $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE edible=?");
-            $stmnt->execute(array("TRUE"));
+            $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE edible=:value");
+            $stmnt->execute(array(':value' => "TRUE"));
             return $this->dataCleaner($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
         } catch (PDOException $e) {
             throw $e;
@@ -83,7 +85,8 @@ class Vegetables
      * @param $vegetable
      * @return mixed
      */
-    public function getVegetable($vegetable){
+    public function getVegetable($vegetable)
+    {
         try {
             $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE name=?");
             $stmnt->execute(array("$vegetable"));

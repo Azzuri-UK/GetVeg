@@ -8,21 +8,22 @@
 
 namespace GetVeg\Routes;
 
-class Vegetables
+class VegetableRouter
 {
     /**
-     * @var \GetVeg\Models\Vegetables
+     * @var \GetVeg\Models\VegetableModel
      */
     public $model;
 
     /**
      * Set PDO.
      *
-     * @param \GetVeg\Models\Vegetables $model
+     * @param \GetVeg\Models\VegetableModel $model
      */
-    public function setModel(\GetVeg\Models\Vegetables $model)
+    public function setModel(\GetVeg\Models\VegetableModel $model)
     {
         $this->model = $model;
+        return true;
     }
 
 
