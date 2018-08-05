@@ -3,9 +3,9 @@ The number one source for all of your vegetables.  Except for tomato, we don't t
 
 ### Requirements
 
-* PHP 7.2
+* PHP 7.1.2
 * Composer
-* PostgreSQL 10.2
+* PostgreSQL 10.4
 * A web server configured to rewrite all requests to /src/index.php
 
 ## Installation
