@@ -8,7 +8,10 @@ ini_set("display_errors", 1);
  */
 
 
-/** In hindsight this probably should have been a class to make this testable  */
+/** I struggled a bit with how to design this part.  It seemed the cleanest in procedural but it makes it a nightmare
+ *  to test.   I did refactor it 3 or 4 times but was never that happy with the results.  In the end I decided
+ *  to stick with the procedural version.  Happy to take some advice on this though.
+ */
 
 require __DIR__ . '/../vendor/autoload.php';
 
