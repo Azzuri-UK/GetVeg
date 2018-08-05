@@ -28,7 +28,7 @@ class vegetablesTest extends TestCase
             ['id' => 2, 'name' => 'test', "classification" => "test", "description" => "test", "edible" => "true"],
             ['id' => 3, 'name' => 'test', "classification" => "test", "description" => "test", "edible" => "true"]
         ];
-        $p->mock("SELECT * FROM VegetableRouter", $results);
+        $p->mock("SELECT * FROM Vegetables", $results);
         $model = new VegetableModel();
         $model->setPdo($p);
         $data = $model->getVegetableList();
