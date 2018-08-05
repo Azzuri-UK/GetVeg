@@ -26,7 +26,8 @@ $container
 // Add the model and call the setter for the database connection
 $container
     ->add(GetVeg\Models\VegetableModel::class)
-    ->addMethodCall('setPdo', [PDO::class]);
+    ->addMethodCall('setPdo', [PDO::class])
+    ->addMethodCall('setDataCleaner', [\GetVeg\utils\DataCleaner::class]);
 
 // Add PDO to the container for DB access using the values from the ini file.
 $container
@@ -34,6 +35,9 @@ $container
     ->addArgument("pgsql:dbname='" . $db['dbname'] . "';host='" . $db['host'] . "'")
     ->addArgument($db['user'])
     ->addArgument($db['password']);
+
+// Add the dummy data cleaner class to the container
+$container->add(\GetVeg\utils\DataCleaner::class);
 
 $router = new Phroute\Phroute\RouteCollector();
 

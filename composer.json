@@ -9,7 +9,8 @@
   "autoload": {
     "psr-4": {
       "GetVeg\\": "src",
-      "GetVeg\\Routes\\": "src/routes/"
+      "GetVeg\\Routes\\": "src/routes/",
+      "GetVeg\\Utils\\" : "src/utils/"
     }
   },
   "require-dev": {

@@ -17,7 +17,18 @@ class vegetablesTest extends TestCase
     function testSetPdo()
     {
         $pdoMock = $this->createMock(\PDO::class);
-        $this->assertTrue((new \GetVeg\Models\VegetableModel())->setPdo($pdoMock));
+        $model = new \GetVeg\Models\VegetableModel();
+        $model->setPdo($pdoMock);
+        $this->assertInstanceOf(\PDO::class,$model->getPdo());
+
+    }
+
+    function testSetDataCleaner()
+    {
+        $mock = $this->createMock(\GetVeg\utils\DataCleaner::class);
+        $model = new \GetVeg\Models\VegetableModel();
+        $model->setDataCleaner($mock);
+        $this->assertInstanceOf(\GetVeg\utils\DataCleaner::class,$model->getDataCleaner());
     }
 
     function testGetVegetableList()

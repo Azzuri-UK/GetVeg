@@ -6,10 +6,25 @@
  * Time: 18:46
  */
 
-namespace utils;
+namespace GetVeg\utils;
 
+/**
+ * Class DataCleaner
+ * @package GetVeg\utils
+ *
+ * A dummy class to demonstrate that in the real world you would need to clean data both going in and coming out
+ */
 
-class dataCleaner
+class DataCleaner
 {
 
+    /**
+     * @param $data
+     * @return mixed
+     *
+     * There would be some actual logic here in the real world.
+     */
+    public function clean($data){
+        return $data;
+    }
 }

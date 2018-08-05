@@ -9,12 +9,14 @@
 namespace GetVeg\Models;
 
 use PDO;
+use GetVeg\utils\DataCleaner;
 class VegetableModel
 {
     /**
      * @var \PDO
      */
     public $pdo;
+    public $dataCleaner;
 
     /**
      * Set PDO.
@@ -24,20 +26,20 @@ class VegetableModel
     public function setPdo(PDO $pdo)
     {
         $this->pdo = $pdo;
-        return true;
     }
 
-    /**
-     * @param $data
-     * @return mixed
-     */
-    private function dataCleaner($data)
-    {
-        /** In the real world we would want code to clean the data here as you can't assume the data coming from
-         *  from the database is clean
-         */
-        return $data;
+    public function getPdo(){
+        return $this->pdo;
     }
+
+    public function setDataCleaner(DataCleaner $cleaner){
+        $this->dataCleaner = $cleaner;
+    }
+
+    public function getDataCleaner(){
+        return $this->dataCleaner;
+    }
+
 
     /**
      * @return mixed
@@ -47,7 +49,7 @@ class VegetableModel
         try {
             $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables");
             $stmnt->execute();
-            return $this->dataCleaner($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
+            return $this->getDataCleaner()->clean($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
         } catch (PDOException $e) {
             throw $e;
         }
@@ -82,6 +84,7 @@ class VegetableModel
     }
 
     /**
+     * Get a specific vegetable, pass results through dataCleaner before returning
      * @param $vegetable
      * @return mixed
      */
