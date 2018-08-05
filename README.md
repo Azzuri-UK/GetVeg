@@ -77,5 +77,5 @@ Returns details of a specific vegetable
 
 Examples
 
-###### index.php --get-vegetables
-###### index.php --get-vegetables/inedible
+###### php index.php --get-vegetables
+###### php index.php --get-vegetables/inedible
