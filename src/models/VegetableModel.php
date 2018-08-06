@@ -32,21 +32,30 @@ class VegetableModel
         $this->pdo = $pdo;
     }
 
+    /**
+     * @return PDO
+     */
     public function getPdo(){
         return $this->pdo;
     }
 
+    /**
+     * @param DataCleaner $cleaner
+     */
     public function setDataCleaner(DataCleaner $cleaner){
         $this->dataCleaner = $cleaner;
     }
 
+    /**
+     * @return DataCleaner
+     */
     public function getDataCleaner(){
         return $this->dataCleaner;
     }
 
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getVegetableList()
     {
@@ -60,7 +69,7 @@ class VegetableModel
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getEdibleVegetableList()
     {
@@ -74,7 +83,7 @@ class VegetableModel
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getInedibleVegetableList()
     {
@@ -90,14 +99,14 @@ class VegetableModel
     /**
      * Get a specific vegetable, pass results through dataCleaner before returning
      * @param $vegetable
-     * @return mixed
+     * @return array
      */
     public function getVegetable($vegetable)
     {
         try {
             $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE name=?");
             $stmnt->execute(array("$vegetable"));
-            return $this->dataCleaner($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
+            return $stmnt->fetch($this->pdo::FETCH_ASSOC);
         } catch (PDOException $e) {
             throw $e;
         }

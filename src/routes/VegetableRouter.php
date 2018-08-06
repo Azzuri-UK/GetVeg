@@ -23,7 +23,6 @@ class VegetableRouter
     public function setModel(\GetVeg\Models\VegetableModel $model)
     {
         $this->model = $model;
-        return true;
     }
 
 

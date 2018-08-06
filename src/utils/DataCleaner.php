@@ -22,7 +22,7 @@ class DataCleaner
      * @param $data
      * @return mixed
      *
-     * There would be some actual logic here in the real world.
+     * There would be some actual logic here
      */
     public function clean($data){
         return $data;
