@@ -16,6 +16,10 @@ class VegetableModel
      * @var \PDO
      */
     public $pdo;
+    
+     /**
+     * @var \GetVeg\Utils\DataCleaner
+     */
     public $dataCleaner;
 
     /**
