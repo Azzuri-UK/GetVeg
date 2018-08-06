@@ -76,7 +76,7 @@ class VegetableModel
         try {
             $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE edible=:value");
             $stmnt->execute(array(':value' => "TRUE"));
-            return $this->dataCleaner($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
+            return $this->dataCleaner->clean($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
         } catch (PDOException $e) {
             throw $e;
         }
@@ -90,7 +90,7 @@ class VegetableModel
         try {
             $stmnt = $this->pdo->prepare("SELECT * FROM Vegetables WHERE edible=?");
             $stmnt->execute(array("FALSE"));
-            return $this->dataCleaner($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
+            return $this->dataCleaner->clean($stmnt->fetchAll($this->pdo::FETCH_ASSOC));
         } catch (PDOException $e) {
             throw $e;
         }
